@@ -15,7 +15,8 @@ def menu():
         elif(opcion == "2"):
             mostrarUnaCate(stock)
         elif(opcion == "3"):
-            ingreso = print('\n \nIngreso de Stock\n')
+           ingreso_stock()
+
         elif(opcion == "4"):
             print(True)
         elif(opcion.upper == "SALIR"):
@@ -62,10 +63,53 @@ def mostrarUnaCate(matriz):
                   print(matriz[columna][fila].name + matriz[columna][fila].cantidad + matriz[columna][fila].precio)
 
 
+# Opción 3 del menú / Compra de stock
+
+def ingreso_stock():
+    
+    ingreso =   {
+                'producto': 'x1',
+                'cantidad':'x2',
+                'valor':  'x3'
+                }
+    stock_compra = {   'camperas':[],
+                'sweters':[],
+                'accesorios':[],
+                'remeras':[],
+                'pantalones':[]
+            }
+
+    print('\n \nIngreso de Stock\n')
+    print("1) Camperas")
+    print("2) Sweters")
+    print("3) Accesorios")
+    print("4) Remeras")
+    print("5) Pantalones")
+    
+    categoria = input('Seleccione una Categoría:\t')
+
+    x1= input('Ingresar producto:\t')
+    x2= int(input('Ingresar cantidad de productos:\t'))
+    x3= int(input('Ingresar valor:\t'))
+
+    # Añade un nuevo elemento al diccionario
+    # >>> d['tres'] = 3
+    # >>> d
+    # {'uno': 1, 'dos': 2, 'tres': 3}
+
+    if categoria == 1:
+        stock_compra['camperas'][0] = x1,x2,x3
+       
+    elif categoria == 2:
+        stock_compra[1][0].append(x1,x2,x3)
+    elif categoria == 3:
+        stock_compra[2][0].append(x1,x2,x3)
+    elif categoria == 4:
+        stock_compra[3][0].append(x1,x2,x3)
+    elif categoria == 5:
+        stock_compra[4][0].append(x1,x2,x3)
+
+    
+
+# Lamado a ejecutar la función de menú principal.
 menu()
-
-
-# def comprar (matriz):
-#     producto = input('Ingrese nombre producto: ')
-#     producto.append(matriz[0][1])
-
