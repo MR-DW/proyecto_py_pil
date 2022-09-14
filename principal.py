@@ -64,51 +64,69 @@ def mostrarUnaCate(matriz):
 
 
 # Opción 3 del menú / Compra de stock
+"""Variables que almacenan el stock ingresado"""
+stock_camperas=[]
+stock_sweters=[]
+stock_accesorios=[]
+stock_remeras=[]
+stock_pantalones=[]
+
 
 def ingreso_stock():
-    
-    ingreso =   {
-                'producto': 'x1',
-                'cantidad':'x2',
-                'valor':  'x3'
-                }
-    stock_compra = {   'camperas':[],
-                'sweters':[],
-                'accesorios':[],
-                'remeras':[],
-                'pantalones':[]
-            }
+    """_summary_: Brinda un menú de opciones con categorías de ropa, 
+    para que se pueda ingresar en la categoría adecuada el nuevo stock para la tienda.
+    Args:   
+        No recibe. 
+    Returns:
+        print:stock con el producto nuevo ingresado.
+    """
 
     print('\n \nIngreso de Stock\n')
     print("1) Camperas")
     print("2) Sweters")
     print("3) Accesorios")
     print("4) Remeras")
-    print("5) Pantalones")
+    print("5) Pantalones\n")
     
-    categoria = input('Seleccione una Categoría:\t')
+    categoria= int(input('Seleccione una Categoría:\t'))
 
-    x1= input('Ingresar producto:\t')
-    x2= int(input('Ingresar cantidad de productos:\t'))
-    x3= int(input('Ingresar valor:\t'))
+    ingreso=[]
 
-    # Añade un nuevo elemento al diccionario
-    # >>> d['tres'] = 3
-    # >>> d
-    # {'uno': 1, 'dos': 2, 'tres': 3}
+    ingreso.append(input('Ingresar nombre del producto:\t'))
+    ingreso.append(int(input('Ingresar cantidad de productos:\t')))
+    ingreso.append(int(input('Ingresar costo:\t')))  
 
-    if categoria == 1:
-        stock_compra['camperas'][0] = x1,x2,x3
-       
+    if categoria== 1: 
+        
+        stock_camperas.extend(ingreso)
+        print(stock_camperas)
     elif categoria == 2:
-        stock_compra[1][0].append(x1,x2,x3)
+       
+        stock_sweters.extend(ingreso)
+        print(stock_sweters)  
     elif categoria == 3:
-        stock_compra[2][0].append(x1,x2,x3)
+       
+        stock_accesorios.extend(ingreso)
+        print(stock_accesorios)
     elif categoria == 4:
-        stock_compra[3][0].append(x1,x2,x3)
+        
+        stock_remeras.extend(ingreso)
+        print(stock_remeras)
     elif categoria == 5:
-        stock_compra[4][0].append(x1,x2,x3)
+        
+        stock_pantalones.extend(ingreso)
+        print(stock_pantalones)
+    else:
+        print('Categoria no valida.')
 
+    print("\n\nStock Total: \n")
+    print('Camperas: \n' + str(stock_camperas))
+    print('Sweters: \n' + str(stock_sweters))  
+    print('Accesorios: \n' + str(stock_accesorios))  
+    print('Remeras: \n' + str(stock_remeras))  
+    print('Pantalones: \n' + str(stock_pantalones))     
+    
+   
     
 
 # Lamado a ejecutar la función de menú principal.
