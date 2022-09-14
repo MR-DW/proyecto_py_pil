@@ -75,10 +75,11 @@ stock_pantalones=[]
 def ingreso_stock():
     """_summary_: Brinda un menú de opciones con categorías de ropa, 
     para que se pueda ingresar en la categoría adecuada el nuevo stock para la tienda.
+    
     Args:   
         No recibe. 
     Returns:
-        print:stock con el producto nuevo ingresado.
+        print: stock completo, con el producto nuevo ingresado.
     """
 
     print('\n \nIngreso de Stock\n')
